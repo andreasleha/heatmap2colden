@@ -2,8 +2,8 @@
 \alias{heatmap.2.colden}
 \title{heatmap.2.colden}
 \usage{
-  heatmap.2.colden(acolNclust, browNclust, ccolCol = NULL,
-    drowCol = NULL, ...)
+  heatmap.2.colden(acolNclust, browNclust, ccolCol,
+    drowCol, ...)
 }
 \arguments{
   \item{acolNclust}{number of clusters to color in the
@@ -28,6 +28,11 @@
   This function is basically a call to heatmap.2 from the
   gplots package. It has the added functionality to color
   branches in the row and/or col dendrograms.
+}
+\examples{
+data(mtcars)
+x  <- as.matrix(mtcars)
+heatmap.2.colden(2, x=x)
 }
 \author{
   Andreas Leha

@@ -19,6 +19,10 @@ NULL
 ##' @author Andreas Leha
 ##' @name heatmap.2.colden
 ##' @export
+##' @examples
+##' data(mtcars)
+##' x  <- as.matrix(mtcars)
+##' heatmap.2.colden(2, x=x)
 heatmap.2.colden <- function(acolNclust,
                              browNclust,
                              ccolCol,
