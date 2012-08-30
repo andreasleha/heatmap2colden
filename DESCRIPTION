@@ -1,0 +1,16 @@
+Package: heatmap2colden
+Maintainer: 'Andreas Leha' <andreas.leha@med.uni-goettingen.de>
+Author: 'Andreas Leha'
+Version: 1.0
+License: GPL-3
+Title: Produce Heatmaps with Colorized Braches in the Row and Column
+    Dendrograms
+Description: Takes the row and column dendrograms of a heatmap and
+    produce a version with colored branches.
+Depends:
+    coldendr,
+    gplots
+Suggests:
+    roxygen2
+Collate:
+    'heatmap2colden-package.r'
