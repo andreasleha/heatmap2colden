@@ -21,8 +21,8 @@ NULL
 ##' @export
 heatmap.2.colden <- function(acolNclust,
                              browNclust,
-                             ccolCol=NULL,
-                             drowCol=NULL,
+                             ccolCol,
+                             drowCol,
                              ...) {
   ## plot a heatmap only to extract the dendrograms
   tfile <- tempfile()
