@@ -1,6 +1,6 @@
 \name{heatmap.2.colden}
 \alias{heatmap.2.colden}
-\title{heatmap.2.colden}
+\title{Plot a heatmap with colored row/col dendrograms}
 \usage{
   heatmap.2.colden(acolNclust, browNclust, ccolCol,
     drowCol, ...)
@@ -22,9 +22,6 @@
   the heatmap.2 returned heatmap
 }
 \description{
-  Plot a heatmap with colored row/col dendrograms
-}
-\details{
   This function is basically a call to heatmap.2 from the
   gplots package. It has the added functionality to color
   branches in the row and/or col dendrograms.

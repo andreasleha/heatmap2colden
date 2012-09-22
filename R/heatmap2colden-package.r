@@ -9,7 +9,6 @@ NULL
 ##' This function is basically a call to heatmap.2 from the gplots package.
 ##' It has the added functionality to color branches in the row and/or col
 ##' dendrograms.
-##' @title heatmap.2.colden
 ##' @param acolNclust number of clusters to color in the columns
 ##' @param browNclust number of clusters to color in the rows
 ##' @param ccolCol the colors to use in the column clusters
