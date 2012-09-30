@@ -27,22 +27,18 @@ heatmap.2.colden <- function(acolNclust,
                              ccolCol,
                              drowCol,
                              ...) {
-  ## plot a heatmap only to extract the dendrograms
-  tfile <- tempfile()
-  png(tfile)
-  hv <- heatmap.2(...)
-  dev.off()
-  unlink(tfile)
   
   ## normal heatmap.2 if no cluster numbers specified
   if (missing(acolNclust) && missing(browNclust)) {
-    eval(hv$call)
+    ##eval(hv$call)
+    hv <- heatmap.2(...)
     return(invisible(hv))
   }
   
+  ## FIXME: depends on named "x" in "..."
   ## extract the dendrograms
-  colDend <- hv$colDendrogram
-  rowDend <- hv$rowDendrogram
+  colDend <- as.dendrogram(seriate(dist(t(eval(as.list(substitute(list(...)))[-1L][["x"]]))), method="OLO")[[1]])
+  rowDend <- as.dendrogram(seriate(dist(eval(as.list(substitute(list(...)))[-1L][["x"]])), method="OLO")[[1]])
   
   ## put color on the dendrograms
   if (!missing(acolNclust)) {
@@ -52,7 +48,7 @@ heatmap.2.colden <- function(acolNclust,
     rowDend <- colorDendrogram(rowDend, browNclust, drowCol)
   }
   
-  ## plot the heatmap again -- with colored dendrograms
+  ## plot the heatmap -- with colored dendrograms
   hv <- heatmap.2(..., Colv=colDend, Rowv=rowDend)
   
   ## silently return the heatmap object

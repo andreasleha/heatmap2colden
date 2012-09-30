@@ -9,7 +9,8 @@ Description: Takes the row and column dendrograms of a heatmap and
     produce a version with colored branches.
 Depends:
     coldendr,
-    gplots
+    gplots,
+    seriation
 Suggests:
     roxygen2
 Collate:
