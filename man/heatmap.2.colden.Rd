@@ -29,7 +29,7 @@
 \examples{
 data(mtcars)
 x  <- as.matrix(mtcars)
-heatmap.2.colden(2, x=x)
+heatmap.2.colden(browNclust=2, x=x)
 }
 \author{
   Andreas Leha
