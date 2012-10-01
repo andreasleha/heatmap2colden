@@ -22,11 +22,11 @@ NULL
 ##' data(mtcars)
 ##' x  <- as.matrix(mtcars)
 ##' heatmap.2.colden(browNclust=2, x=x)
-heatmap.2.colden <- function(acolNclust,
+heatmap.2.colden <- function(...,
+                             acolNclust,
                              browNclust,
                              ccolCol,
-                             drowCol,
-                             ...) {
+                             drowCol) {
   
   ## plot a heatmap only to extract the dendrograms
   tfile <- tempfile()
