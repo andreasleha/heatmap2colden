@@ -69,6 +69,9 @@ ser.heatmap.2.colden <- function(...,
                                  ccolCol,
                                  drowCol,
                                  sermethod="OLO") {
+  if (!require(seriation))
+    stop("the 'require' package is needed for this function")
+
   addargs <- as.list(substitute(list(...)))[-1L]
 
   mat <- eval(if ("x" %in% names(addargs)) addargs[["x"]] else addargs[[1]])
