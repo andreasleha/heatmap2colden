@@ -53,8 +53,11 @@ heatmap.2.colden <- function(acolNclust,
     rowDend <- colorDendrogram(rowDend, browNclust, drowCol)
   }
   
-  ## plot the heatmap -- with colored dendrograms
-  hv <- heatmap.2(..., Colv=colDend, Rowv=rowDend)
+  ## plot the heatmap again -- with colored dendrograms
+  addargs <- as.list(substitute(list(...)))[-1L]
+  addargs$Colv <- colDend
+  addargs$Rowv <- rowDend
+  hv <- do.call(heatmap.2, addargs)
   
   ## silently return the heatmap object
   invisible(hv)
