@@ -2,8 +2,8 @@
 \alias{heatmap.2.colden}
 \title{Plot a heatmap with colored row/col dendrograms}
 \usage{
-  heatmap.2.colden(acolNclust, browNclust, ccolCol,
-    drowCol, ...)
+  heatmap.2.colden(..., acolNclust, browNclust, ccolCol,
+    drowCol)
 }
 \arguments{
   \item{acolNclust}{number of clusters to color in the

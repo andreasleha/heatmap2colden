@@ -78,7 +78,7 @@ heatmap.2.colden <- function(...,
 ##' @param sermethod which method to use for the seriation ("GW", "OLO")
 ##' @return the heatmap.2 returned heatmap
 ##' @author Andreas Leha
-##' @name heatmap.2.colden
+##' @name ser.heatmap.2.colden
 ##' @export
 ##' @examples
 ##' data(mtcars)
