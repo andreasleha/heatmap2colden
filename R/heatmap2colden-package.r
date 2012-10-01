@@ -62,3 +62,25 @@ heatmap.2.colden <- function(...,
   ## silently return the heatmap object
   invisible(hv)
 }
+
+ser.heatmap.2.colden <- function(...,
+                                 acolNclust,
+                                 browNclust,
+                                 ccolCol,
+                                 drowCol,
+                                 sermethod="OLO") {
+  addargs <- as.list(substitute(list(...)))[-1L]
+
+  mat <- eval(if ("x" %in% names(addargs)) addargs[["x"]] else addargs[[1]])
+  
+  colDend <- as.dendrogram(seriate(dist(t(mat)), method=sermethod)[[1]])
+  rowDend <- as.dendrogram(seriate(dist(mat), method=sermethod)[[1]])
+
+  heatmap.2.colden(...,
+                   Colv=colDend,
+                   Rowv=rowDend,
+                   acolNclust=acolNclust,
+                   browNclust=browNclust,
+                   ccolCol=ccolCol,
+                   drowCol=drowCol)
+}
